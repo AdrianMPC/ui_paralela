@@ -36,7 +36,6 @@ class MainWindow(QMainWindow):
 
     # funciones
     def populate_microphone_list(self):
-        """Llena el combo box con los micrófonos detectados."""
         microphones = self.microphone_manager.get_microphone_list()
         self.cb_inputList.clear()
         for name, index in microphones:
@@ -45,6 +44,7 @@ class MainWindow(QMainWindow):
 def initialize_window(argv: list[str]):
     app = QApplication(argv)
     UIWindow = MainWindow()
+    UIWindow.setWindowTitle('Super Transcriptor Paralelo 64');
     app.exec_()
     
 

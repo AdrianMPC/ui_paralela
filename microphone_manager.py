@@ -14,11 +14,11 @@ class MicrophoneManager:
             if device_info.get('maxInputChannels') > 0:
                 name = device_info.get('name')
                 try:
-                    name = name.encode('latin1').decode('utf-8')  # Decodificar como UTF-8
+                    name = name.encode('latin1').decode('utf-8')
                 except (UnicodeEncodeError, UnicodeDecodeError):
-                    pass  # Dejar el nombre original si la corrección falla
+                    pass
 
-                self.devices.append((name, i))  # Guardar como tupla (nombre, índice)
+                self.devices.append((name, i))
         return self.devices
 
     def select_microphone(self, device_index):
