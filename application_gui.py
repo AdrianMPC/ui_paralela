@@ -22,9 +22,11 @@ class MainWindow(QMainWindow):
     # Eventos
     def on_bt_grabar_clicked(self):
         self.lb_status.setText("Grabando...")
+        self.cb_inputList.setEnabled(False)
 
     def on_bt_stop_clicked(self):
         self.lb_status.setText("Parado")
+        self.cb_inputList.setEnabled(True)
 
     def on_microphone_selected(self):
         selected_index = self.cb_inputList.currentData()
